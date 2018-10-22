@@ -1,4 +1,4 @@
-https://leetcode.com/problems/minimum-cost-to-hire-k-workers/discuss/141768/Detailed-explanation-O(NlogN)
+// https://leetcode.com/problems/minimum-cost-to-hire-k-workers/discuss/141768/Detailed-explanation-O(NlogN)
 class Solution {
     public double mincostToHireWorkers(int[] quality, int[] wage, int K) {
         double[][] workers = new double[quality.length][2];
