@@ -22,7 +22,17 @@ class Solution {
                 letters.add(new Log(id, l));
             }
         }
-        Collections.sort(letters, (a, b) -> (a.log.compareTo(b.log)));
+        Comparator<Log> comparator = new Comparator<Log>(){
+            @Override
+            public int compare(Log o1, Log o2){
+                int res = o1.log.compareTo(o2.log);
+                if(res == 0){
+                    res = o1.id.compareTo(o2.id);
+                }
+                return res;
+            }
+        };
+        Collections.sort(letters, comparator);
         int i = 0;
         for (Log l: letters) {
             ans[i++] = l.id + " " + l.log;
